@@ -1,0 +1,34 @@
+﻿@model IEnumerable<AppUser>
+
+@{
+    ViewData["Title"] = "All User";
+}
+
+<h1 class="bg-info text-white">All Users</h1>
+
+<a asp-action="Create" asp-controller="Admin" class="btn btn-secondary">Create New User</a>
+
+<table class="table table-sm table-bordered">
+    <tr>
+        <th>User ID</th>
+        <th>User Name</th>
+        <th>Email</th>
+        <th>Update</th>
+        <th>Delete</th>
+
+    </tr>
+    @foreach (AppUser user in Model)
+    {
+        <tr>
+            <td>@user.Id</td>
+            <td>@user.UserName</td>
+            <td>@user.Email</td>
+            <td><button asp-action="Update" asp-controller="Admin" asp-route-itemid="@user.Id" class="btn btn-secondary">Update</button></td>
+            <td>
+                <form asp-action="Delete" asp-controller="Admin" asp-route-id="@user.Id">
+                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+    }
+</table>
