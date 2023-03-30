@@ -1,3 +1,4 @@
+using IdentitySample.IdentityPolicy;
 using IdentitySample.Models.Authentication;
 using IdentitySample.Models.Context;
 using Microsoft.AspNetCore.Identity;
@@ -26,6 +27,7 @@ namespace IdentitySample
                 opt.ExpireTimeSpan = TimeSpan.FromMinutes(5);
                 opt.SlidingExpiration = true;
             });
+            builder.Services.AddTransient<PasswordValidator<AppUser>,CustomPasswordPolicy>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

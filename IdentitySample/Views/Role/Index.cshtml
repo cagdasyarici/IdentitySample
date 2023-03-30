@@ -21,7 +21,7 @@
             <td>@role.Name</td>
             <td i-role="@role.Id"></td>
             <td>
-                <a class="btn btn-primary"asp-action="Update" asp-controller="Role" asp-route-id="@role.Id">Update</a>
+                <a asp-action="Update" asp-controller="Role" asp-route-id="@role.Id" class="btn btn-primary">Update</a>
             </td>
             <td>
                 <form asp-action="Delete" asp-controller="Role" asp-route-id="@role.Id" method="post">

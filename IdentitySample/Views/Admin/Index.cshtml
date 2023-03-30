@@ -23,7 +23,7 @@
             <td>@user.Id</td>
             <td>@user.UserName</td>
             <td>@user.Email</td>
-            <td><button asp-action="Update" asp-controller="Admin" asp-route-itemid="@user.Id" class="btn btn-secondary">Update</button></td>
+            <td><a asp-action="Update" asp-controller="Admin" asp-route-itemid="@user.Id" class="btn btn-secondary">Update</a></td>
             <td>
                 <form asp-action="Delete" asp-controller="Admin" asp-route-id="@user.Id">
                     <button type="submit" class="btn btn-sm btn-danger">Delete</button>
